@@ -1,4 +1,4 @@
-package com.frogobox.research.core
+package com.frogobox.research.common.base
 
 import android.os.Bundle
 import android.util.Log

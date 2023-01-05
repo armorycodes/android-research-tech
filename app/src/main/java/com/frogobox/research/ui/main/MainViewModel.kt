@@ -1,6 +1,9 @@
 package com.frogobox.research.ui.main
 
-import androidx.lifecycle.ViewModel
+import com.frogobox.research.common.base.BaseViewModel
+import com.frogobox.research.repository.SampleRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
 /**
  * Created by Faisal Amir on 24/10/22
@@ -12,8 +15,10 @@ import androidx.lifecycle.ViewModel
  * All rights reserved
  */
 
-class MainViewModel : ViewModel() {
-
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val sampleRepository: SampleRepository
+): BaseViewModel() {
 
 
 }

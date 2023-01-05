@@ -3,9 +3,11 @@ package com.frogobox.research.ui.detail
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
-import com.frogobox.research.core.BaseBindActivity
+import com.frogobox.research.common.base.BaseBindActivity
 import com.frogobox.research.databinding.ActivityDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailActivity : BaseBindActivity<ActivityDetailBinding>() {
 
     companion object {

@@ -3,6 +3,7 @@ package com.frogobox.research
 import android.app.Application
 import android.content.Context
 import android.os.Build
+import dagger.hilt.android.HiltAndroidApp
 import java.util.*
 
 /**
@@ -15,6 +16,7 @@ import java.util.*
  * All rights reserved
  */
 
+@HiltAndroidApp
 class MainApp : Application() {
 
     companion object {

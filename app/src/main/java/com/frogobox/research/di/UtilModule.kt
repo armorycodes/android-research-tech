@@ -1,7 +1,11 @@
-package com.frogobox.research.delegate
+package com.frogobox.research.di
+
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
 /**
- * Created by Faisal Amir on 24/10/22
+ * Created by Faisal Amir on 06/01/23
  * -----------------------------------------
  * E-mail   : faisalamircs@gmail.com
  * Github   : github.com/amirisback
@@ -10,11 +14,10 @@ package com.frogobox.research.delegate
  * All rights reserved
  */
 
+@Module
+@InstallIn(SingletonComponent::class)
+class UtilModule {
 
-class MainDelegateImpl : MainDelegate {
 
-    override fun getTagMainDelegate(): String {
-        return MainDelegateImpl::class.java.simpleName
-    }
 
 }

@@ -1,4 +1,6 @@
-package com.frogobox.research.data.api
+package com.frogobox.research.data.api.sample
+
+import com.frogobox.research.data.api.ApiService
 
 /**
  * Created by Faisal Amir on 24/10/22
@@ -10,12 +12,12 @@ package com.frogobox.research.data.api
  * All rights reserved
  */
 
-interface MainApi {
+interface SampleApi {
 
     // TODO : Add your code here
 
     class Creator {
-        fun newInstance(baseUrl: String): MainApi {
+        fun newInstance(baseUrl: String): SampleApi {
             return ApiService.create(baseUrl)
         }
     }

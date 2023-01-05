@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.frogobox.research.core.BaseBindFragment
+import com.frogobox.research.common.base.BaseBindFragment
 import com.frogobox.research.databinding.FragmentMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainFragment : BaseBindFragment<FragmentMainBinding>() {
 
     companion object {

@@ -1,4 +1,7 @@
-package com.frogobox.research.delegate
+package com.frogobox.research.common.ext
+
+import android.content.Context
+import android.widget.Toast
 
 /**
  * Created by Faisal Amir on 24/10/22
@@ -10,9 +13,6 @@ package com.frogobox.research.delegate
  * All rights reserved
  */
 
-
-interface MainDelegate {
-
-    fun getTagMainDelegate(): String
-
+fun Context.showToast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }

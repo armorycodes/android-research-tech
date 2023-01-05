@@ -1,8 +1,4 @@
-package com.frogobox.research.core
-
-import androidx.fragment.app.Fragment
-import com.frogobox.research.delegate.MainDelegate
-import com.frogobox.research.delegate.MainDelegateImpl
+package com.frogobox.research.common.delegate
 
 /**
  * Created by Faisal Amir on 24/10/22
@@ -14,7 +10,9 @@ import com.frogobox.research.delegate.MainDelegateImpl
  * All rights reserved
  */
 
-abstract class BaseFragment : Fragment(),
-    MainDelegate by MainDelegateImpl() {
+
+interface SampleDelegate {
+
+    fun getTagMainDelegate(): String
 
 }
