@@ -1,8 +1,4 @@
-package com.frogobox.research.di
-
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+package com.frogobox.research.data.local.sample
 
 /**
  * Created by Faisal Amir on 06/01/23
@@ -14,9 +10,12 @@ import dagger.hilt.components.SingletonComponent
  * All rights reserved
  */
 
-@Module
-@InstallIn(SingletonComponent::class)
-class UtilModule {
 
+object SampleAttr {
+
+    const val TABLE_NAME = "sample"
+    const val ATTR_TABLE_ID = "table_id"
+    const val ATTR_ID = "id"
+    const val ATTR_DATA = "data"
 
 }

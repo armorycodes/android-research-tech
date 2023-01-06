@@ -1,8 +1,7 @@
-package com.frogobox.research.di
+package com.frogobox.research.repository.sample
 
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import com.frogobox.research.common.callback.DataResponseCallback
+import com.frogobox.research.data.remote.sample.SampleResponse
 
 /**
  * Created by Faisal Amir on 06/01/23
@@ -14,9 +13,9 @@ import dagger.hilt.components.SingletonComponent
  * All rights reserved
  */
 
-@Module
-@InstallIn(SingletonComponent::class)
-class UtilModule {
 
+interface SampleRemoteSources {
+
+    fun getSample(callback: DataResponseCallback<SampleResponse>)
 
 }

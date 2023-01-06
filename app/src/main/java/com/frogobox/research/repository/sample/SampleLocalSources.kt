@@ -1,4 +1,4 @@
-package com.frogobox.research.repository
+package com.frogobox.research.repository.sample
 
 /**
  * Created by Faisal Amir on 06/01/23
@@ -11,6 +11,8 @@ package com.frogobox.research.repository
  */
 
 
-interface SampleRepository {
+interface SampleLocalSources {
+
+    fun getSampleLocalData(): String
 
 }

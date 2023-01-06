@@ -1,8 +1,4 @@
-package com.frogobox.research.di
-
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+package com.frogobox.research.deeplink
 
 /**
  * Created by Faisal Amir on 06/01/23
@@ -14,9 +10,6 @@ import dagger.hilt.components.SingletonComponent
  * All rights reserved
  */
 
-@Module
-@InstallIn(SingletonComponent::class)
-class UtilModule {
 
-
+class SampleDeeplink {
 }

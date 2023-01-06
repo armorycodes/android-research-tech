@@ -1,4 +1,4 @@
-package com.frogobox.research.data.api
+package com.frogobox.research.data.remote
 
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor

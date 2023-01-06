@@ -1,7 +1,6 @@
 package com.frogobox.research.di
 
-import com.frogobox.research.repository.sample.SampleRepository
-import com.frogobox.research.repository.sample.SampleRepositoryImpl
+import com.frogobox.research.repository.sample.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -21,12 +20,14 @@ import dagger.hilt.components.SingletonComponent
     NetworkModule::class,
     ServiceModule::class,
     DatabaseModule::class,
-    UtilModule::class,
-    SourceModule::class])
+    UtilModule::class])
 @InstallIn(SingletonComponent::class)
-abstract class RepositoryModule {
+abstract class SourceModule {
 
     @Binds
-    abstract fun getSampleRepository(repository: SampleRepositoryImpl): SampleRepository
+    abstract fun getSampleRemoteDataSources(sources: SampleRemoteSourcesImpl): SampleRemoteSources
+
+    @Binds
+    abstract fun getSampleLocalDataSources(sources: SampleLocalSourcesImpl): SampleLocalSources
 
 }

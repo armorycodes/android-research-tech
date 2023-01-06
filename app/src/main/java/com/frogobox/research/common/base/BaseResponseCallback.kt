@@ -1,8 +1,4 @@
-package com.frogobox.research.di
-
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+package com.frogobox.research.common.base
 
 /**
  * Created by Faisal Amir on 06/01/23
@@ -14,9 +10,10 @@ import dagger.hilt.components.SingletonComponent
  * All rights reserved
  */
 
-@Module
-@InstallIn(SingletonComponent::class)
-class UtilModule {
 
-
+interface BaseResponseCallback {
+    fun onFailed(statusCode: Int, errorMessage: String = "")
+    fun onFinish()
+    fun onHideProgress()
+    fun onShowProgress()
 }

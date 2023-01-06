@@ -1,7 +1,7 @@
 package com.frogobox.research.ui.main
 
 import com.frogobox.research.common.base.BaseViewModel
-import com.frogobox.research.repository.SampleRepository
+import com.frogobox.research.repository.sample.SampleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val sampleRepository: SampleRepository
+    private val repository: SampleRepository
 ): BaseViewModel() {
 
 

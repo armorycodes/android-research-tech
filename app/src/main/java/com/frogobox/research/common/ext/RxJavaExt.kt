@@ -1,7 +1,7 @@
-package com.frogobox.research.repository
+package com.frogobox.research.common.ext
 
-import com.frogobox.research.data.api.sample.SampleApi
-import javax.inject.Inject
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.Disposable
 
 /**
  * Created by Faisal Amir on 06/01/23
@@ -14,8 +14,6 @@ import javax.inject.Inject
  */
 
 
-class SampleRepositoryImpl @Inject constructor(
-    private val api: SampleApi
-) : SampleRepository {
-
+fun Disposable.disposedBy(compositeDisposable: CompositeDisposable?) {
+    compositeDisposable?.add(this)
 }

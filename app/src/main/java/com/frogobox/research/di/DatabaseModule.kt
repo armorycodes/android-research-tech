@@ -1,9 +1,12 @@
 package com.frogobox.research.di
 
-import com.frogobox.research.data.remote.sample.SampleApi
+import android.content.Context
+import com.frogobox.research.data.local.db.AppDatabase
+import com.frogobox.research.data.local.sample.SampleDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -17,14 +20,20 @@ import javax.inject.Singleton
  * All rights reserved
  */
 
-@Module(includes = [NetworkModule::class])
+
+@Module
 @InstallIn(SingletonComponent::class)
-class ServiceModule {
+object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideMainApi(): SampleApi {
-        return SampleApi.Creator().newInstance("https://api.github.com/")
+    fun provideDatabase(@ApplicationContext appContext: Context): AppDatabase {
+        return AppDatabase.newInstance(appContext)
+    }
+
+    @Provides
+    fun provideSampleDao(database: AppDatabase): SampleDao {
+        return database.sampleDao()
     }
 
 }
