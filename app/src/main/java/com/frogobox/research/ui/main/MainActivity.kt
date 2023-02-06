@@ -24,6 +24,7 @@ class MainActivity : BaseBindActivity<ActivityMainBinding>() {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
             // Call View Model Here
+            viewModel.getData()
             Log.d(TAG, "View Model : ${viewModel::class.java.simpleName}")
         }
         // TODO : Add your code here

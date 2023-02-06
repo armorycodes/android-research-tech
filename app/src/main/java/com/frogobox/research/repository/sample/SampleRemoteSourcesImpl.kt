@@ -24,7 +24,7 @@ class SampleRemoteSourcesImpl @Inject constructor(
     private val api: SampleApi,
 ) : DataSourcesImpl(), SampleRemoteSources {
 
-    override fun getSample(callback: DataResponseCallback<SampleResponse>) {
+    override fun getSample(callback: DataResponseCallback<List<SampleResponse>>) {
         api.getSample().subscribeOn(Schedulers.io())
             .doOnSubscribe {
                 callback.onShowProgress()
@@ -35,7 +35,7 @@ class SampleRemoteSourcesImpl @Inject constructor(
             }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                callback.onSuccess(it)
+                it.data?.let { it1 -> callback.onSuccess(it1) }
             }, {
                 callback.onFailed(500, it.message.toString())
             }).disposedBy(compositeDisposable)

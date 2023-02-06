@@ -1,5 +1,7 @@
 package com.frogobox.research.data.remote.sample
 
+import android.content.Context
+import com.frogobox.research.common.base.BaseResponseModel
 import com.frogobox.research.data.remote.ApiService
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
@@ -18,12 +20,12 @@ interface SampleApi {
 
     // TODO : Add your code here
 
-    @GET("v1/sample/test")
-    fun getSample() : Observable<SampleResponse>
+    @GET("api/v1/sample/data.json")
+    fun getSample() : Observable<BaseResponseModel<List<SampleResponse>>>
 
     class Creator {
-        fun newInstance(baseUrl: String): SampleApi {
-            return ApiService.create(baseUrl)
+        fun newInstance(context: Context, baseUrl: String): SampleApi {
+            return ApiService.create(context, baseUrl)
         }
     }
 

@@ -16,6 +16,6 @@ import com.frogobox.research.data.remote.sample.SampleResponse
 
 interface SampleRemoteSources {
 
-    fun getSample(callback: DataResponseCallback<SampleResponse>)
+    fun getSample(callback: DataResponseCallback<List<SampleResponse>>)
 
 }

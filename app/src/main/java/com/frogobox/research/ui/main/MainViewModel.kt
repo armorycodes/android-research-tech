@@ -1,6 +1,9 @@
 package com.frogobox.research.ui.main
 
+import android.util.Log
 import com.frogobox.research.common.base.BaseViewModel
+import com.frogobox.research.common.callback.DataResponseCallback
+import com.frogobox.research.data.remote.sample.SampleResponse
 import com.frogobox.research.repository.sample.SampleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -20,5 +23,30 @@ class MainViewModel @Inject constructor(
     private val repository: SampleRepository
 ): BaseViewModel() {
 
+    fun getData() {
+        repository.getSampleDataFromServer(object : DataResponseCallback<List<SampleResponse>> {
+            
+            override fun onSuccess(data: List<SampleResponse>) {
+                Log.d("MainViewModel","onSuccess")
+            }
 
+            override fun onFailed(statusCode: Int, errorMessage: String) {
+                Log.d("MainViewModel","onFailed")
+            }
+
+            override fun onFinish() {
+                Log.d("MainViewModel","onFinish")
+            }
+
+            override fun onHideProgress() {
+                Log.d("MainViewModel","onHideProgress")
+            }
+
+            override fun onShowProgress() {
+                Log.d("MainViewModel","onShowProgress")
+            }
+        })
+        
+    }
+    
 }

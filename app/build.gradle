@@ -64,7 +64,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
 
-    implementation "com.google.code.gson:gson:2.10"
+    implementation "com.google.code.gson:gson:2.10.1"
 
     implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
     implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.7"
@@ -84,8 +84,7 @@ dependencies {
 
     implementation "com.github.bumptech.glide:glide:4.14.2"
 
-    debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
-    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
+    implementation "com.github.chuckerteam.chucker:library:3.5.2"
 
     kapt "com.github.bumptech.glide:compiler:4.14.2"
     kapt "androidx.lifecycle:lifecycle-compiler:2.5.1"

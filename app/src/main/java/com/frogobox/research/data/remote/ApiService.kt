@@ -1,7 +1,9 @@
 package com.frogobox.research.data.remote
 
+import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
+import com.chuckerteam.chucker.api.RetentionManager
 import com.frogobox.research.MainApp
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -24,17 +26,23 @@ import java.util.concurrent.TimeUnit
 
 object ApiService {
 
-    inline fun <reified T> create(baseUrl: String): T {
+    inline fun <reified T> create(context: Context, baseUrl: String): T {
 
         val httpLoggingInterceptor = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
 
-        val chuckInterceptor = ChuckerInterceptor.Builder(MainApp.getContext())
-            .collector(ChuckerCollector(MainApp.getContext()))
-            .maxContentLength(250000L)
-            .redactHeaders(emptySet())
-            .alwaysReadResponseBody(false)
+        // Create the Collector
+        val chuckerCollector = ChuckerCollector(
+            context = context,
+            // Toggles visibility of the notification
+            showNotification = true,
+            // Allows to customize the retention period of collected data
+            retentionPeriod = RetentionManager.Period.ONE_HOUR
+        )
+
+        val chuckInterceptor = ChuckerInterceptor.Builder(context)
+            .collector(chuckerCollector)
             .build()
 
         val client = OkHttpClient.Builder()

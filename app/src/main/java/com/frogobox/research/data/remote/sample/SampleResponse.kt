@@ -1,5 +1,6 @@
 package com.frogobox.research.data.remote.sample
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
 /**
@@ -13,7 +14,12 @@ import com.google.gson.annotations.SerializedName
  */
 
 
+@Keep
 data class SampleResponse(
-    @SerializedName("data")
-    var data: String? = "",
+    @SerializedName("email")
+    var email: String?,
+    @SerializedName("id")
+    var id: Int?,
+    @SerializedName("name")
+    var name: String?
 )

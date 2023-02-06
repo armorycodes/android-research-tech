@@ -1,9 +1,11 @@
 package com.frogobox.research.di
 
+import android.content.Context
 import com.frogobox.research.data.remote.sample.SampleApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -23,8 +25,8 @@ class ServiceModule {
 
     @Provides
     @Singleton
-    fun provideMainApi(): SampleApi {
-        return SampleApi.Creator().newInstance("https://api.github.com/")
+    fun provideMainApi(@ApplicationContext context: Context): SampleApi {
+        return SampleApi.Creator().newInstance(context, "https://armorycodes.github.io/android-research-tech-pro/")
     }
 
 }

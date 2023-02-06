@@ -1,5 +1,8 @@
 package com.frogobox.research.repository.sample
 
+import com.frogobox.research.common.callback.DataResponseCallback
+import com.frogobox.research.data.remote.sample.SampleResponse
+
 /**
  * Created by Faisal Amir on 06/01/23
  * -----------------------------------------
@@ -12,5 +15,7 @@ package com.frogobox.research.repository.sample
 
 
 interface SampleRepository {
+
+    fun getSampleDataFromServer(callback: DataResponseCallback<List<SampleResponse>>)
 
 }
