@@ -1,8 +1,8 @@
 package com.frogobox.research.common.base
 
 import androidx.appcompat.app.AppCompatActivity
-import com.frogobox.research.common.delegate.SampleDelegate
-import com.frogobox.research.common.delegate.SampleDelegateImpl
+import com.frogobox.research.common.delegate.SampleDelegates
+import com.frogobox.research.common.delegate.SampleDelegatesImpl
 
 /**
  * Created by Faisal Amir on 24/10/22
@@ -15,6 +15,6 @@ import com.frogobox.research.common.delegate.SampleDelegateImpl
  */
 
 abstract class BaseActivity : AppCompatActivity(),
-    SampleDelegate by SampleDelegateImpl() {
+    SampleDelegates by SampleDelegatesImpl() {
 
 }

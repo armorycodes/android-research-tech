@@ -27,6 +27,7 @@ class MainActivity : BaseBindActivity<ActivityMainBinding>() {
             viewModel.getData()
             Log.d(TAG, "View Model : ${viewModel::class.java.simpleName}")
         }
+        Log.d("SampleDelegates Output", getTagMainDelegate())
         // TODO : Add your code here
 
     }

@@ -11,10 +11,8 @@ package com.frogobox.research.common.delegate
  */
 
 
-class SampleDelegateImpl : SampleDelegate {
+interface SampleDelegates {
 
-    override fun getTagMainDelegate(): String {
-        return SampleDelegateImpl::class.java.simpleName
-    }
+    fun getTagMainDelegate(): String
 
 }
