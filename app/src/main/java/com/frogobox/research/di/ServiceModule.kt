@@ -26,7 +26,7 @@ class ServiceModule {
     @Provides
     @Singleton
     fun provideMainApi(@ApplicationContext context: Context): SampleApi {
-        return SampleApi.Creator().newInstance(context, "https://armorycodes.github.io/android-research-tech-pro/")
+        return SampleApi.Creator().newInstance(context, "https://armorycodes.github.io/android-research-tech/")
     }
 
 }
