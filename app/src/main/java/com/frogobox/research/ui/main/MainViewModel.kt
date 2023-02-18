@@ -3,6 +3,7 @@ package com.frogobox.research.ui.main
 import android.util.Log
 import com.frogobox.research.common.base.BaseViewModel
 import com.frogobox.research.common.callback.DataResponseCallback
+import com.frogobox.research.common.delegate.PreferenceDelegates
 import com.frogobox.research.data.remote.sample.SampleResponse
 import com.frogobox.research.repository.sample.SampleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,7 +21,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val repository: SampleRepository
+    private val repository: SampleRepository,
+    private val preferenceDelegates: PreferenceDelegates
 ): BaseViewModel() {
 
     fun getData() {

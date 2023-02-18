@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.frogobox.research.common.base.BaseBindFragment
+import com.frogobox.research.common.delegate.PreferenceDelegates
 import com.frogobox.research.databinding.FragmentMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainFragment : BaseBindFragment<FragmentMainBinding>() {
@@ -19,6 +21,8 @@ class MainFragment : BaseBindFragment<FragmentMainBinding>() {
 
     private val viewModel: MainViewModel by viewModels()
 
+    @Inject
+    lateinit var preferenceDelegates: PreferenceDelegates
 
     override fun setupViewBinding(
         inflater: LayoutInflater,

@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import com.frogobox.research.common.base.BaseBindActivity
+import com.frogobox.research.common.delegate.PreferenceDelegates
 import com.frogobox.research.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : BaseBindActivity<ActivityMainBinding>() {
@@ -15,6 +17,9 @@ class MainActivity : BaseBindActivity<ActivityMainBinding>() {
     }
 
     private val viewModel: MainViewModel by viewModels()
+
+    @Inject
+    lateinit var preferenceDelegates: PreferenceDelegates
 
     override fun initBinding(): ActivityMainBinding {
         return ActivityMainBinding.inflate(layoutInflater)

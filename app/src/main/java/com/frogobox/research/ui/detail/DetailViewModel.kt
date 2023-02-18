@@ -1,6 +1,7 @@
 package com.frogobox.research.ui.detail
 
 import com.frogobox.research.common.base.BaseViewModel
+import com.frogobox.research.common.delegate.PreferenceDelegates
 import com.frogobox.research.repository.sample.SampleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -17,7 +18,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    private val repository: SampleRepository
+    private val repository: SampleRepository,
+    private val preferenceDelegates: PreferenceDelegates
 ): BaseViewModel() {
 
 
